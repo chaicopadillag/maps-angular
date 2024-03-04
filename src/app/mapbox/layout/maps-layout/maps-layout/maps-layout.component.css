@@ -1,0 +1,7 @@
+map-side-menu {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: 120px;
+  z-index: 10;
+}

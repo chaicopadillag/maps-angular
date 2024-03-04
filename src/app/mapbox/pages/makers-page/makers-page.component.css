@@ -1,0 +1,16 @@
+.map {
+  width: 100vw;
+  height: 100vh;
+}
+
+ul {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+button {
+  position: fixed;
+  right: 10px;
+  bottom: 30px;
+}

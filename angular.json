@@ -21,7 +21,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@ngx-env/builder:application",
           "options": {
             "outputPath": "dist/maps-app-angular",
             "index": "src/index.html",
@@ -37,7 +37,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "ngxEnv": {
+              "prefix": "(NG)_"
+            }
           },
           "configurations": {
             "production": {
@@ -64,7 +67,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@ngx-env/builder:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "maps-app-angular:build:production"
@@ -76,13 +79,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@ngx-env/builder:extract-i18n",
           "options": {
             "buildTarget": "maps-app-angular:build"
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@ngx-env/builder:karma",
           "options": {
             "polyfills": [
               "zone.js",
@@ -101,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
