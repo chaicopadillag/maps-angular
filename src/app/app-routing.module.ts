@@ -8,6 +8,13 @@ const routes: Routes = [
       import('./mapbox/mapbox.module').then((m) => m.MapboxModule),
   },
   {
+    path: 'alone',
+    loadComponent: () =>
+      import('./alone/pages/alone-page/alone-page.component').then(
+        (m) => m.AlonePageComponent
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'map',
   },

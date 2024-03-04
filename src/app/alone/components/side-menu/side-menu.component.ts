@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 type MenuItems = {
   title: string;
@@ -6,9 +8,11 @@ type MenuItems = {
 };
 
 @Component({
-  selector: 'map-side-menu',
+  standalone: true,
+  selector: 'side-menu',
+  imports: [CommonModule, RouterModule],
   templateUrl: './side-menu.component.html',
-  styles: `li:hover{cursor:pointer}`,
+  styleUrl: './side-menu.component.css',
 })
 export class SideMenuComponent {
   public menuItems: MenuItems[] = [
@@ -27,6 +31,10 @@ export class SideMenuComponent {
     {
       path: '/map/properties',
       title: 'Houses',
+    },
+    {
+      path: '/alone',
+      title: 'Alone page',
     },
   ];
 }
